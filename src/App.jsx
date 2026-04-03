@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/anchor-is-valid */
 import React, { useState, useEffect } from 'react';
 import './App.css';
 
@@ -17,10 +18,18 @@ function Navbar() {
       <div className="navbar__logo">Elementum</div>
       <ul className={`navbar__links ${menuOpen ? 'open' : ''}`}>
         {['Home', 'Studio', 'Services', 'Contact', 'FAQs'].map(item => (
-          <li key={item}><a href="/#" onClick={() => setMenuOpen(false)}>{item}</a></li>
+          <li key={item}>
+            <button className="nav-link-btn" onClick={() => setMenuOpen(false)}>
+              {item}
+            </button>
+          </li>
         ))}
       </ul>
-      <button className="navbar__hamburger" onClick={() => setMenuOpen(o => !o)} aria-label="Toggle menu">
+      <button
+        className="navbar__hamburger"
+        onClick={() => setMenuOpen(o => !o)}
+        aria-label="Toggle menu"
+      >
         <span /><span /><span />
       </button>
     </nav>
@@ -29,24 +38,22 @@ function Navbar() {
 
 // ─── HERO ─────────────────────────────────────────────────────────────────────
 const teamMembers = [
-  { id: 1, name: '',     img: 'https://randomuser.me/api/portraits/men/32.jpg',  style: { top: '52%', left: '4%' } },
-  { id: 2, name: '', img: 'https://randomuser.me/api/portraits/men/11.jpg',  style: { top: '35%', left: '0%' } },
-  { id: 3, name: '',          img: 'https://randomuser.me/api/portraits/men/45.jpg',  style: { top: '18%', left: '28%' } },
-  { id: 4, name: '',          img: 'https://randomuser.me/api/portraits/women/44.jpg',style: { top: '38%', left: '38%' } },
-  { id: 5, name: '',          img: 'https://randomuser.me/api/portraits/men/67.jpg',  style: { top: '20%', left: '52%' } },
-  { id: 6, name: '',          img: 'https://randomuser.me/api/portraits/men/85.jpg',  style: { top: '22%', left: '70%' } },
-  { id: 7, name: '',          img: 'https://randomuser.me/api/portraits/women/63.jpg',style: { top: '42%', left: '77%' } },
-  { id: 8, name: '',          img: 'https://randomuser.me/api/portraits/men/22.jpg',  style: { top: '58%', left: '42%' } },
+  { id: 1, name: '',     img: 'https://randomuser.me/api/portraits/men/32.jpg',   style: { top: '52%', left: '4%' } },
+  { id: 2, name: '', img: 'https://randomuser.me/api/portraits/men/11.jpg',   style: { top: '35%', left: '0%' } },
+  { id: 3, name: '',          img: 'https://randomuser.me/api/portraits/men/45.jpg',   style: { top: '18%', left: '28%' } },
+  { id: 4, name: '',          img: 'https://randomuser.me/api/portraits/women/44.jpg', style: { top: '38%', left: '38%' } },
+  { id: 5, name: '',          img: 'https://randomuser.me/api/portraits/men/67.jpg',   style: { top: '20%', left: '52%' } },
+  { id: 6, name: '',          img: 'https://randomuser.me/api/portraits/men/85.jpg',   style: { top: '22%', left: '70%' } },
+  { id: 7, name: '',          img: 'https://randomuser.me/api/portraits/women/63.jpg', style: { top: '42%', left: '77%' } },
+  { id: 8, name: '',          img: 'https://randomuser.me/api/portraits/men/22.jpg',   style: { top: '58%', left: '42%' } },
 ];
 
 function Hero() {
   return (
     <section className="hero">
-      {/* Decorative shapes */}
       <div className="hero__shape hero__shape--purple" />
       <div className="hero__shape hero__shape--pink" />
       <div className="hero__shape hero__shape--squiggle" />
-
       <h1 className="hero__heading">
         The <span className="hero__highlight hero__highlight--underline-yellow">thinkers</span> and<br />
         doers were changing<br />
@@ -56,8 +63,6 @@ function Hero() {
         We are a team of strategists, designers communicators, researchers. Togeather,<br />
         we belive that progress only highappers when you refuse to play things safe.
       </p>
-
-      {/* Floating team members */}
       <div className="hero__team">
         {teamMembers.map(m => (
           <div key={m.id} className="hero__avatar" style={m.style}>
@@ -81,10 +86,9 @@ function Tomorrow() {
           Togeather, we belive that progress only happens when you refuse
           to play things safe.
         </p>
-        <a href="/#" className="read-more">Read more <span className="read-more__line" /></a>
+        <button className="read-more-btn">Read more <span className="read-more__line" /></button>
       </div>
       <div className="tomorrow__image">
-        {/* Decorative triangles */}
         <div className="tomorrow__tri tomorrow__tri--red-lg" />
         <div className="tomorrow__tri tomorrow__tri--red-sm" />
         <div className="tomorrow__tri tomorrow__tri--green" />
@@ -110,19 +114,18 @@ function Progress() {
           makers to accelerate their progress in areas such as brand, design
           digital, comms and social research.
         </p>
-        <a href="/#" className="read-more">Read more <span className="read-more__line" /></a>
+        <button className="read-more-btn">Read more <span className="read-more__line" /></button>
       </div>
-      {/* Wavy red line decorative */}
       <div className="progress-section__wave" />
     </section>
   );
 }
 
-// ─── SERVICES / WHAT WE OFFER ─────────────────────────────────────────────────
+// ─── WHAT WE OFFER ────────────────────────────────────────────────────────────
 const services = [
-  { label: 'Office of multiple interest content',   title: 'Colaborative & partnership' },
+  { label: 'Office of multiple interest content',         title: 'Colaborative & partnership' },
   { label: 'The hanger US Air force digital experimental', title: 'We talk about our weight' },
-  { label: 'Delta faucet content, social, digital', title: 'Piloting digital confidence' },
+  { label: 'Delta faucet content, social, digital',       title: 'Piloting digital confidence' },
 ];
 
 function WhatWeOffer() {
@@ -147,14 +150,14 @@ function WhatWeOffer() {
   );
 }
 
-// ─── TESTIMONIAL ──────────────────────────────────────────────────────────────
+// ─── TESTIMONIALS ─────────────────────────────────────────────────────────────
 const testimonialAvatars = [
-  { img: 'https://randomuser.me/api/portraits/men/10.jpg',  style: { top: '5%',  left: '2%' } },
-  { img: 'https://randomuser.me/api/portraits/men/20.jpg',  style: { top: '40%', left: '0%' } },
-  { img: 'https://randomuser.me/api/portraits/men/30.jpg',  style: { top: '70%', left: '3%' } },
-  { img: 'https://randomuser.me/api/portraits/men/40.jpg',  style: { top: '10%', right: '25%' } },
-  { img: 'https://randomuser.me/api/portraits/men/50.jpg',  style: { top: '50%', right: '5%' } },
-  { img: 'https://randomuser.me/api/portraits/men/60.jpg',  style: { top: '5%',  right: '3%' } },
+  { img: 'https://randomuser.me/api/portraits/men/10.jpg', style: { top: '5%',  left: '2%' } },
+  { img: 'https://randomuser.me/api/portraits/men/20.jpg', style: { top: '40%', left: '0%' } },
+  { img: 'https://randomuser.me/api/portraits/men/30.jpg', style: { top: '70%', left: '3%' } },
+  { img: 'https://randomuser.me/api/portraits/men/40.jpg', style: { top: '10%', right: '25%' } },
+  { img: 'https://randomuser.me/api/portraits/men/50.jpg', style: { top: '50%', right: '5%' } },
+  { img: 'https://randomuser.me/api/portraits/men/60.jpg', style: { top: '5%',  right: '3%' } },
 ];
 
 function Testimonials() {
@@ -173,11 +176,11 @@ function Testimonials() {
       <div className="testimonials__card">
         <span className="testimonials__quote testimonials__quote--open">"</span>
         <p>
-          Elementum delivered the site with inthe timeline as they requested.
+          Elementum delivered the site with in the timeline as they requested.
           Inthe end, the client found a 50% increase in traffic with in days
           since its launch. They also had an impressive ability to use
-          technologies that the company hasnt used, which have also proved to
-          be easy to use and reliable
+          technologies that the company hasn't used, which have also proved to
+          be easy to use and reliable.
         </p>
         <span className="testimonials__quote testimonials__quote--close">"</span>
       </div>
@@ -191,41 +194,43 @@ function Newsletter() {
     <section className="newsletter">
       <div className="newsletter__shape newsletter__shape--yellow" />
       <div className="newsletter__shape newsletter__shape--purple" />
-     
+      
       <h2>Subscribe to<br />our newsletter</h2>
       <p>To make your stay special and even more memorable</p>
-      <button className="newsletter__btn" onClick={() => alert('Subscribed!')}>
-        Subscribe Now
-      </button>
+      <button className="newsletter__btn">Subscribe Now</button>
     </section>
   );
 }
 
 // ─── FOOTER ───────────────────────────────────────────────────────────────────
+const footerCompany = ['Home', 'Studio', 'Service', 'Blog'];
+const footerTerms   = ['Privacy Policy', 'Terms & Conditions', 'Explore', 'Accessibility'];
+const footerSocial  = ['Instagram', 'LinkedIn', 'Youtube', 'Twitter'];
+
 function Footer() {
   return (
     <footer className="footer">
       <div className="footer__grid">
         <div className="footer__col">
           <h4>Company</h4>
-          {['Home','Studio','Service','Blog'].map(l => <a key={l} href="/#">{l}</a>)}
+          {footerCompany.map(l => <button key={l} className="footer-link-btn">{l}</button>)}
         </div>
         <div className="footer__col">
-          <h4>Terms & Policies</h4>
-          {['Privacy Policy','Terms & Conditions','Explore','Accessibility'].map(l => <a key={l} href="/#">{l}</a>)}
+          <h4>Terms &amp; Policies</h4>
+          {footerTerms.map(l => <button key={l} className="footer-link-btn">{l}</button>)}
         </div>
         <div className="footer__col">
           <h4>Follow Us</h4>
-          {['Instagram','LinkedIn','Youtube','Twitter'].map(l => <a key={l} href="/#">{l}</a>)}
+          {footerSocial.map(l => <button key={l} className="footer-link-btn">{l}</button>)}
         </div>
         <div className="footer__col">
-          <h4>Terms & Policies</h4>
+          <h4>Terms &amp; Policies</h4>
           <p>1498w Fusion sta, STE 20 Chicago, IL 63861.</p>
           <p>(123) 456789000</p>
           <p>info@elementum.com</p>
         </div>
       </div>
-      <div className="footer__bottom">©2020 Ueserium. All rights reserved</div>
+      <div className="footer__bottom">©2020 elementum. All rights reserved</div>
     </footer>
   );
 }
