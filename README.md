@@ -1,6 +1,9 @@
 # Elementum — React Assignment
 
 A pixel-accurate React implementation of the Elementum Figma design.
+[![Live Demo](https://img.shields.io/badge/Live%20Demo-Visit%20Site-black?style=for-the-badge)](https://figma-assignment-lovat.vercel.app/)
+
+🔗 **Live Demo:** [https://YOUR-LIVE-URL-HERE](https://figma-assignment-lovat.vercel.app/)
 
 ## Tech Stack
 - **React 18** — component-based UI
