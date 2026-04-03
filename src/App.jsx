@@ -17,7 +17,7 @@ function Navbar() {
       <div className="navbar__logo">Elementum</div>
       <ul className={`navbar__links ${menuOpen ? 'open' : ''}`}>
         {['Home', 'Studio', 'Services', 'Contact', 'FAQs'].map(item => (
-          <li key={item}><a href="#" onClick={() => setMenuOpen(false)}>{item}</a></li>
+          <li key={item}><a href="/#" onClick={() => setMenuOpen(false)}>{item}</a></li>
         ))}
       </ul>
       <button className="navbar__hamburger" onClick={() => setMenuOpen(o => !o)} aria-label="Toggle menu">
@@ -29,14 +29,14 @@ function Navbar() {
 
 // ─── HERO ─────────────────────────────────────────────────────────────────────
 const teamMembers = [
-  { id: 1,      img: 'https://randomuser.me/api/portraits/men/32.jpg',  style: { top: '52%', left: '4%' } },
-  { id: 2,  img: 'https://randomuser.me/api/portraits/men/11.jpg',  style: { top: '35%', left: '0%' } },
-  { id: 3,       img: 'https://randomuser.me/api/portraits/men/45.jpg',  style: { top: '18%', left: '28%' } },
-  { id: 4,       img: 'https://randomuser.me/api/portraits/women/44.jpg',style: { top: '38%', left: '38%' } },
-  { id: 5,        img: 'https://randomuser.me/api/portraits/men/67.jpg',  style: { top: '20%', left: '52%' } },
-  { id: 6,         img: 'https://randomuser.me/api/portraits/men/85.jpg',  style: { top: '22%', left: '70%' } },
-  { id: 7,       img: 'https://randomuser.me/api/portraits/women/63.jpg',style: { top: '42%', left: '77%' } },
-  { id: 8,        img: 'https://randomuser.me/api/portraits/men/22.jpg',  style: { top: '58%', left: '42%' } },
+  { id: 1, name: 'rubul',     img: 'https://randomuser.me/api/portraits/men/32.jpg',  style: { top: '52%', left: '4%' } },
+  { id: 2, name: 'nish Nath', img: 'https://randomuser.me/api/portraits/men/11.jpg',  style: { top: '35%', left: '0%' } },
+  { id: 3, name: '',          img: 'https://randomuser.me/api/portraits/men/45.jpg',  style: { top: '18%', left: '28%' } },
+  { id: 4, name: '',          img: 'https://randomuser.me/api/portraits/women/44.jpg',style: { top: '38%', left: '38%' } },
+  { id: 5, name: '',          img: 'https://randomuser.me/api/portraits/men/67.jpg',  style: { top: '20%', left: '52%' } },
+  { id: 6, name: '',          img: 'https://randomuser.me/api/portraits/men/85.jpg',  style: { top: '22%', left: '70%' } },
+  { id: 7, name: '',          img: 'https://randomuser.me/api/portraits/women/63.jpg',style: { top: '42%', left: '77%' } },
+  { id: 8, name: '',          img: 'https://randomuser.me/api/portraits/men/22.jpg',  style: { top: '58%', left: '42%' } },
 ];
 
 function Hero() {
@@ -81,7 +81,7 @@ function Tomorrow() {
           Togeather, we belive that progress only happens when you refuse
           to play things safe.
         </p>
-        <a href="#" className="read-more">Read more <span className="read-more__line" /></a>
+        <a href="/#" className="read-more">Read more <span className="read-more__line" /></a>
       </div>
       <div className="tomorrow__image">
         {/* Decorative triangles */}
@@ -110,7 +110,7 @@ function Progress() {
           makers to accelerate their progress in areas such as brand, design
           digital, comms and social research.
         </p>
-        <a href="#" className="read-more">Read more <span className="read-more__line" /></a>
+        <a href="/#" className="read-more">Read more <span className="read-more__line" /></a>
       </div>
       {/* Wavy red line decorative */}
       <div className="progress-section__wave" />
@@ -173,7 +173,11 @@ function Testimonials() {
       <div className="testimonials__card">
         <span className="testimonials__quote testimonials__quote--open">"</span>
         <p>
-          Elementum successfully delivered the website on schedule, exactly as requested. Within just a few days of launch, the client saw a 50% increase in traffic. What stood out even more was their ability to implement new technologies the company had never used before—solutions that turned out to be intuitive, dependable, and highly effective.
+          Elementum delivered the site with inthe timeline as they requested.
+          Inthe end, the client found a 50% increase in traffic with in days
+          since its launch. They also had an impressive ability to use
+          technologies that the company hasnt used, which have also proved to
+          be easy to use and reliable
         </p>
         <span className="testimonials__quote testimonials__quote--close">"</span>
       </div>
@@ -183,14 +187,14 @@ function Testimonials() {
 
 // ─── NEWSLETTER ───────────────────────────────────────────────────────────────
 function Newsletter() {
-  const [email, setEmail] = useState('');
   return (
     <section className="newsletter">
       <div className="newsletter__shape newsletter__shape--yellow" />
       <div className="newsletter__shape newsletter__shape--purple" />
+      <div className="newsletter__badge">hp</div>
       <h2>Subscribe to<br />our newsletter</h2>
       <p>To make your stay special and even more memorable</p>
-      <button className="newsletter__btn" onClick={() => email && alert(`Subscribed: ${email}`)}>
+      <button className="newsletter__btn" onClick={() => alert('Subscribed!')}>
         Subscribe Now
       </button>
     </section>
@@ -204,15 +208,15 @@ function Footer() {
       <div className="footer__grid">
         <div className="footer__col">
           <h4>Company</h4>
-          {['Home','Studio','Service','Blog'].map(l => <a key={l} href="#">{l}</a>)}
+          {['Home','Studio','Service','Blog'].map(l => <a key={l} href="/#">{l}</a>)}
         </div>
         <div className="footer__col">
           <h4>Terms & Policies</h4>
-          {['Privacy Policy','Terms & Conditions','Explore','Accessibility'].map(l => <a key={l} href="#">{l}</a>)}
+          {['Privacy Policy','Terms & Conditions','Explore','Accessibility'].map(l => <a key={l} href="/#">{l}</a>)}
         </div>
         <div className="footer__col">
           <h4>Follow Us</h4>
-          {['Instagram','LinkedIn','Youtube','Twitter'].map(l => <a key={l} href="#">{l}</a>)}
+          {['Instagram','LinkedIn','Youtube','Twitter'].map(l => <a key={l} href="/#">{l}</a>)}
         </div>
         <div className="footer__col">
           <h4>Terms & Policies</h4>
@@ -221,7 +225,7 @@ function Footer() {
           <p>info@elementum.com</p>
         </div>
       </div>
-      <div className="footer__bottom">©2020 Elementum. All rights reserved</div>
+      <div className="footer__bottom">©2020 Ueserium. All rights reserved</div>
     </footer>
   );
 }
