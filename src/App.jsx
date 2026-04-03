@@ -29,8 +29,8 @@ function Navbar() {
 
 // ─── HERO ─────────────────────────────────────────────────────────────────────
 const teamMembers = [
-  { id: 1, name: 'rubul',     img: 'https://randomuser.me/api/portraits/men/32.jpg',  style: { top: '52%', left: '4%' } },
-  { id: 2, name: 'nish Nath', img: 'https://randomuser.me/api/portraits/men/11.jpg',  style: { top: '35%', left: '0%' } },
+  { id: 1, name: '',     img: 'https://randomuser.me/api/portraits/men/32.jpg',  style: { top: '52%', left: '4%' } },
+  { id: 2, name: '', img: 'https://randomuser.me/api/portraits/men/11.jpg',  style: { top: '35%', left: '0%' } },
   { id: 3, name: '',          img: 'https://randomuser.me/api/portraits/men/45.jpg',  style: { top: '18%', left: '28%' } },
   { id: 4, name: '',          img: 'https://randomuser.me/api/portraits/women/44.jpg',style: { top: '38%', left: '38%' } },
   { id: 5, name: '',          img: 'https://randomuser.me/api/portraits/men/67.jpg',  style: { top: '20%', left: '52%' } },
@@ -191,7 +191,7 @@ function Newsletter() {
     <section className="newsletter">
       <div className="newsletter__shape newsletter__shape--yellow" />
       <div className="newsletter__shape newsletter__shape--purple" />
-      <div className="newsletter__badge">hp</div>
+     
       <h2>Subscribe to<br />our newsletter</h2>
       <p>To make your stay special and even more memorable</p>
       <button className="newsletter__btn" onClick={() => alert('Subscribed!')}>
